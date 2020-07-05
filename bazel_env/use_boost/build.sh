@@ -1,0 +1,1 @@
+bazel build //use_boost:hello_world

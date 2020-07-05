@@ -1,0 +1,6 @@
+.cproject
+.project
+.sconsign.dblite
+.settings/
+*.a
+*.o

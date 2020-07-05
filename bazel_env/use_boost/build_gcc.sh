@@ -1,0 +1,1 @@
+g++ -std=c++11 -o hello_world_with_mac_local_boost hello_world_with_mac_local_boost.cpp -lm

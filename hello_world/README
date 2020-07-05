@@ -1,0 +1,136 @@
+本文件用于提示依赖库的写法：
+1、头文件的包含路径
+2、BUILD文件中deps包含的依赖的写法
+
+
+boost: boost库
+ 头文件写法，从namespace开始，例如incldue "boost/boost_filesystem.h"
+deps写法:
+cpp3rdlib/boost:1.56.0@//cpp3rdlib/boost:boost_filesystem
+cpp3rdlib/boost:1.56.0@//cpp3rdlib/boost:boost_regex
+cpp3rdlib/boost:1.56.0@//cpp3rdlib/boost:boost_serialization
+cpp3rdlib/boost:1.56.0@//cpp3rdlib/boost:boost_system
+cpp3rdlib/boost:1.56.0@//cpp3rdlib/boost:boost_thread
+cpp3rdlib/boost:1.56.0@//cpp3rdlib/boost:boost_atomic
+cpp3rdlib/boost:1.56.0@//cpp3rdlib/boost:boost_chrono
+cpp3rdlib/boost:1.56.0@//cpp3rdlib/boost:boost_container
+cpp3rdlib/boost:1.56.0@//cpp3rdlib/boost:boost_context
+cpp3rdlib/boost:1.56.0@//cpp3rdlib/boost:boost_coroutine
+cpp3rdlib/boost:1.56.0@//cpp3rdlib/boost:boost_date_time
+cpp3rdlib/boost:1.56.0@//cpp3rdlib/boost:boost_exception
+cpp3rdlib/boost:1.56.0@//cpp3rdlib/boost:boost_filesystem
+cpp3rdlib/boost:1.56.0@//cpp3rdlib/boost:boost_graph
+cpp3rdlib/boost:1.56.0@//cpp3rdlib/boost:boost_iostreams
+cpp3rdlib/boost:1.56.0@//cpp3rdlib/boost:boost_locale
+cpp3rdlib/boost:1.56.0@//cpp3rdlib/boost:boost_log
+cpp3rdlib/boost:1.56.0@//cpp3rdlib/boost:boost_log_setup
+cpp3rdlib/boost:1.56.0@//cpp3rdlib/boost:boost_math_c99
+cpp3rdlib/boost:1.56.0@//cpp3rdlib/boost:boost_math_c99f
+cpp3rdlib/boost:1.56.0@//cpp3rdlib/boost:boost_math_c99l
+cpp3rdlib/boost:1.56.0@//cpp3rdlib/boost:boost_math_tr1
+cpp3rdlib/boost:1.56.0@//cpp3rdlib/boost:boost_math_tr1f
+cpp3rdlib/boost:1.56.0@//cpp3rdlib/boost:boost_math_tr1l
+cpp3rdlib/boost:1.56.0@//cpp3rdlib/boost:boost_prg_exec_monitor
+cpp3rdlib/boost:1.56.0@//cpp3rdlib/boost:boost_program_options
+cpp3rdlib/boost:1.56.0@//cpp3rdlib/boost:boost_python
+cpp3rdlib/boost:1.56.0@//cpp3rdlib/boost:boost_random
+cpp3rdlib/boost:1.56.0@//cpp3rdlib/boost:boost_regex
+cpp3rdlib/boost:1.56.0@//cpp3rdlib/boost:boost_serialization
+cpp3rdlib/boost:1.56.0@//cpp3rdlib/boost:boost_signals
+cpp3rdlib/boost:1.56.0@//cpp3rdlib/boost:boost_system
+cpp3rdlib/boost:1.56.0@//cpp3rdlib/boost:boost_test_exec_monitor
+cpp3rdlib/boost:1.56.0@//cpp3rdlib/boost:boost_thread
+cpp3rdlib/boost:1.56.0@//cpp3rdlib/boost:boost_timer
+cpp3rdlib/boost:1.56.0@//cpp3rdlib/boost:boost_unit_test_framework
+cpp3rdlib/boost:1.56.0@//cpp3rdlib/boost:boost_wave
+cpp3rdlib/boost:1.56.0@//cpp3rdlib/boost:boost_wserialization
+
+cares:
+ -I指定cpp3rdlib/c-ares/include, 头文件例子: include "ares.h"
+deps:
+cpp3rdlib/c-ares:1.10.0@//cpp3rdlib/c-ares:cares
+
+curl:
+ -I指定cpp3rdlib/curl/include, 头文件例子: include "xxxx.h"
+deps:
+cpp3rdlib/curl:7.46.0@//cpp3rdlib/curl:curl
+
+gflags:
+ -I指定cpp3rdlib/gflags/include, 头文件例子: include "xxxx.h"
+deps:
+cpp3rdlib/gflags:2.1.1@//cpp3rdlib/gflags:gflags
+
+snapp:
+ -I指定cpp3rdlib/google-snappy/include, 头文件例子: include "xxxx.h"
+deps:
+cpp3rdlib/google-snappy:1.1.32@//cpp3rdlib/google-snappy:snappy
+
+hiredis:
+ -I指定cpp3rdlib/hiredis/include, 头文件例子: include "xxxx.h"
+deps:
+cpp3rdlib/hiredis:0.11.0@cpp3rdlib/hiredis:hiredis
+
+jemalloc:
+ -I指定cpp3rdlib/jemalloc/include, 头文件例子: include "xxxx.h"
+deps:
+ccpp3rdlib/jemalloc:3.5.1@//pp3rdlib/jemalloc:jemalloc
+
+log4cxx:
+ -I指定cpp3rdlib/log4cxx/include, 头文件例子: include "xxxx.h"
+deps:
+cpp3rdlib/log4cxx:log4cxx
+
+protobuf:
+ -I指定cpp3rdlib/protobuf/include, 头文件例子: include "xxxx.h"
+deps:
+cpp3rdlib/protobuf:2.5.0@//cpp3rdlib/protobuf:protobuf
+
+
+rapidjson:
+头文件例子: include "xxxx.h"
+deps:
+ cpp3rdlib/rapidjson:1.0.2@//cpp3rdlib/rapidjson:rapidjson
+
+thrift:
+头文件例子: include "xxxx.h"
+deps:
+pp3rdlib/thrift:0.9.1@//cpp3rdlib/thrift:thrift,thriftnb
+
+cppcomponent:
+头文件写法，从根目录开始，例如 include "cppcomponent/json/json_path_utils.h"
+deps:
+data/cppcomponent:1.0.0@//cppcomponent:cppcomponent
+
+--------------------------------------------
+cppinterface:thrift接口相关,
+头文件写法，从根目录开始，例如include "cppinterface/adengine/adengine_types.h"
+deps写法:
+data/cppinterface:1.0.0@/cppinterface/adengine:adengine
+data/cppinterface:1.0.0@/cppinterface/adengine:adengine_thrift
+data/cppinterface:1.0.0@/cppinterface/adengine:engine_thrift
+data/cppinterface:1.0.0@/cppinterface/article_service:article_article_thrift
+data/cppinterface:1.0.0@/cppinterface/article_service:article_cell_thrift
+data/cppinterface:1.0.0@/cppinterface/article_service:article_service
+data/cppinterface:1.0.0@/cppinterface/base:base_thrift
+data/cppinterface:1.0.0@/cppinterface/index_service:index_service
+data/cppinterface:1.0.0@/cppinterface/index_service:index_service_thrift
+data/cppinterface:1.0.0@/cppinterface/predict:predict
+data/cppinterface:1.0.0@/cppinterface/predict:predict_thrift
+data/cppinterface:1.0.0@/cppinterface/sati:sati_thrift
+data/cppinterface:1.0.0@/cppinterface/sort_service:article_sort_thrift
+data/cppinterface:1.0.0@/cppinterface/sort_service:sort_service
+
+--------------------------------------------
+cpputil:兼容cpplib
+头文件写法，从根目录开始，例如incldue "cpputil/consul/register.h"
+deps写法:
+cpputil/consul@//cpputil/consul:consul
+cpputil/minizip@//cpputil/minizip:minizip
+cpputil/program@//cpputil/program:conf
+cpputil/metrics2@//cpputil/metrics2:metrics2
+cpputil/backstrace@//cpputil/backstrace:backstrace
+cpputil/thrift_socket_pool@//cpputil/thrift_socket_pool:thrift_socket_pool
+cpputil/pool@//cpputil/pool:pool
+cpputil/demotion@//cpputil/demotion:demotion
+cpputil/db2@//cpputil/db2:db2
+cpputil/convert@//cpputil/convert:convert

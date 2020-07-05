@@ -1,0 +1,9 @@
+cc_binary(
+    name="blade_main",
+    srcs=[
+        "test_class.cpp",
+    ],
+    deps=[
+        "#pthread",
+    ]
+)

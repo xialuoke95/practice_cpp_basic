@@ -1,0 +1,9 @@
+cc_library(
+    name="log4cxx",
+    export_incs=["include"],
+    deps=[
+        "cpp3rdlib/apr:1.5.1@//cpp3rdlib/apr:apr-1",
+        "cpp3rdlib/aprutil:1.5.4@//cpp3rdlib/aprutil:aprutil-1",
+    ],
+    prebuilt=True,
+)

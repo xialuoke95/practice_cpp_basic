@@ -1,0 +1,33 @@
+# Configure file for using blade without google-libs
+
+link_config(
+    link_on_tmp=False,
+    enable_dccc=False
+)
+
+cc_config(
+    extra_incs=[],
+    cflags=['-DHAVE_CONFIG_H', '-DHAVE_NETINET_IN_H' ,'-DHAVE_INTTYPES_H' ,'-DLINUX'],
+    cxxflags=['-std=c++14'],
+    linkflags=[],
+    warnings = [
+        '-Wall',
+        '-Wextra',
+        # disable some warnings enabled by Wextra
+        '-Wno-unused-function',
+        '-Wno-unused-local-typedefs',
+        '-Wno-unused-parameter',
+        '-Wno-unused-variable',
+        # warn but do not raise error
+        '-Wno-error=missing-field-initializers',
+        '-Wno-error=sign-compare',
+        '-Wno-error=unused-but-set-variable',
+    ],
+    c_warnings = [
+        '-Werror-implicit-function-declaration'
+    ],
+    cxx_warnings = [
+        '-Wnon-virtual-dtor',
+        '-Wvla',
+    ],
+)

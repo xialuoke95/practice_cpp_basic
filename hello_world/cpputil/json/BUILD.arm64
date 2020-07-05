@@ -1,0 +1,23 @@
+cc_library(
+    name="json",
+    srcs=["*.cpp"],
+    deps=[
+        "cpp3rdlib/boost:arm64-1.70.0@//cpp3rdlib/boost:boost_filesystem",
+        "cpp3rdlib/rapidjson:arm64-rapidjson@//cpp3rdlib/rapidjson:rapidjson",
+        "cpputil/log:1.0.0@//cpputil/log:log",
+    ],
+    optimize=['-O3', '-Wall', '-Werror'],
+)
+
+cc_test(
+    name="json_test",
+    srcs=[
+        "test/*.cpp",
+    ],
+    deps=[
+        ":json",
+        "cpp3rdlib/gtest:arm64-1.8.0@//cpp3rdlib/gtest:gtest",
+    ],
+    testdata=["test/data"],
+)
+
