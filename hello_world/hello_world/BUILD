@@ -7,3 +7,13 @@ cc_binary(
         "#pthread",
     ]
 )
+
+cc_binary(
+    name="test_push_back",
+    srcs=[
+        "test_push_back.cpp",
+    ],
+    deps=[
+        "#pthread",
+    ]
+)

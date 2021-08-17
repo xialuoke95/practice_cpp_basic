@@ -1,15 +1,31 @@
 # Configure file for using blade without google-libs
 
-link_config(
-    link_on_tmp=False,
-    enable_dccc=False
+
+proto_library_config(
+    protoc={"default": "cpp3rdlib/protobuf/bin/protoc"}
+)
+
+thrift_library_config(
+    thrift={"default": "cpp3rdlib/thrift/bin/thrift"},
+    thrift_incs={"default": []}
+)
+
+fbthrift_library_config(
+    fbthrift1={"default": "cpp3rdlib/fbthrift/bin/thrift1"},
+    fbthrift2={"default": "cpp3rdlib/fbthrift/bin/thrift2"},
+    fbthrift_incs={"default": []},
 )
 
 cc_config(
-    extra_incs=[],
-    cflags=['-DHAVE_CONFIG_H', '-DHAVE_NETINET_IN_H' ,'-DHAVE_INTTYPES_H' ,'-DLINUX'],
-    cxxflags=['-std=c++14'],
-    linkflags=[],
+    cflags={
+        'base': ['-DHAVE_CONFIG_H', '-DHAVE_NETINET_IN_H' ,'-DHAVE_INTTYPES_H' ,'-DLINUX'],
+    },
+    cxxflags={
+        'base': ['-std=c++14'],
+    },
+    linkflags={
+        'base': [],
+    },
     warnings = [
         '-Wall',
         '-Wextra',
@@ -27,7 +43,7 @@ cc_config(
         '-Werror-implicit-function-declaration'
     ],
     cxx_warnings = [
-        '-Wnon-virtual-dtor',
-        '-Wvla',
+        #'-Wnon-virtual-dtor',
+        #'-Wvla',
     ],
 )

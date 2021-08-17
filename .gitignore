@@ -2,3 +2,7 @@
 .vscode/
 no_git_cpp_primer_code/
 mda_analyze
+*.so.*
+*.blade_tools*
+*build64_release*
+*test.ipynb
