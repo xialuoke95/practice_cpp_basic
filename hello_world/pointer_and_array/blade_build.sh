@@ -1,0 +1,1 @@
+blade build :test_array_blade --bundle=debug

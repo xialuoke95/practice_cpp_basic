@@ -1,0 +1,9 @@
+cc_binary(
+    name="test_array_blade",
+    srcs=[
+        "test_array.cpp"
+    ],
+    deps=[
+        "#pthread",
+    ]
+)
